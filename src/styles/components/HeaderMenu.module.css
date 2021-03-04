@@ -1,8 +1,64 @@
 .headerMenu {
+  padding: 16px 0;
+  /* background: #282828; */
+  background: #313235;
+}
+
+.headerContent {
+  max-width: 1100px;
+  min-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  padding-left: 1%;
+  padding-right: 1%;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.headerContent div:first-child {
   display: flex;
   align-items: center;
 }
 
-.headerMenu span {
-  font-size: 3rem;
+.headerContent div:first-child span {
+  font-size: 2rem;
+  color: #fffafa ;
+  font-family: "Kaushan Script", cursive;
+}
+
+.headerContent div:last-child {
+  margin-left: auto;
+}
+
+.headerContent a {
+  padding-left: 40px;
+  font-size: 16px;
+  color: #fffafa ;
+  align-items: center;
+  transition: color 0.3s;
+
+}
+
+.headerContent a:hover svg {
+  color: #DA8371;
+}
+
+.headerContent a:hover {
+  color: #DA8371;
+}
+
+
+.headerContent svg {
+  position: relative;
+  color: #fffafa ;
+  top: 1px;
+}
+
+
+.headerContent div:first-child img {
+  margin-right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }

@@ -2,11 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 0;
 }
 
-:root {
+/* :root {
   --white: #fff;
-  --background: #f2f3f5;
+  --background: #312E38;
   --gray-line: #dcdde0;
   --text: #666666;
   --text-highlight: #b3b9ff;
@@ -16,7 +17,32 @@
   --blue: #5965e0;
   --blue-dark: #4953b8;
   --blue-twitter: #2aa9e0;
-}
+} */
+
+/* 
+usando
+#312E38
+#5F5C67
+#F7EBFF
+#00C89F
+*/
+
+
+/* 
+XENIA DEF
+Cor base: #282828
+Discreta: #424449 
+#59646B
+#6F868C
+(Cores para barras/backgrounds de menu/tabelas)
+Discreta: #89AAA9
+#A9CEC2
+(Cores texto)
+
+#9C606F
+#DA8371
+(cores destaque)
+*/
 
 @media (max-width: 1080px) {
   html {
@@ -31,24 +57,36 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--text);
+  background: #282828;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
 body,
 input,
 textarea,
-button {
-  font: 400 1rem "Inter", sans-serif; /* 1rem = 16px, usamos assim para responsividade */
+button,
+a {
+  /* font: 400 1rem "Inter", sans-serif; 1rem = 16px, usamos assim para responsividade */
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 1rem;
 }
 
 button {
   cursor: pointer;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 500;
+}
+
 a {
   color: inherit; /* herdar a cor do container dos links */
   text-decoration: none;
 }
-
-
