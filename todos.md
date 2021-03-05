@@ -1,10 +1,8 @@
-## To do
+## To do list
 
--[ ] Implement styled components
-
--[ ] Verify menu selected (example in gobarber-web sigin and signup inputs)
-
--[ ] Implement language option:
-  -[ ] Portuguese
-  -[ ] English
-  -[ ] German
+* [ ] Implement styled components;
+* [ ] Verify menu selected (example in gobarber-web sigin and signup inputs);
+* [ ] Implement language options:
+  * [ ] Portuguese;
+  * [ ] English;
+  * [ ] German;
