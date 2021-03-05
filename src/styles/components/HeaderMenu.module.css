@@ -1,12 +1,15 @@
 .headerMenu {
-  padding: 16px 0;
+  min-width: 100%;
+  min-width: 65rem;
+
+  padding: 1rem 0;
   /* background: #282828; */
   background: #313235;
 }
 
 .headerContent {
-  max-width: 1100px;
-  min-width: 600px;
+  width: 80%;
+  min-width: 60rem;
   margin: 0 auto;
   display: flex;
   padding-left: 1%;
@@ -23,8 +26,14 @@
 
 .headerContent div:first-child span {
   font-size: 2rem;
-  color: #fffafa ;
+  color: #fffafa;
   font-family: "Kaushan Script", cursive;
+  transform: translateX(0);
+  transition: transform 500ms ease;
+}
+
+.headerContent div:first-child span:hover {
+  transform: translateX(60%);
 }
 
 .headerContent div:last-child {
@@ -32,33 +41,32 @@
 }
 
 .headerContent a {
-  padding-left: 40px;
-  font-size: 16px;
-  color: #fffafa ;
+  padding-left: 2.5rem;
+  font-size: 1rem;
+  color: #fffafa;
   align-items: center;
   transition: color 0.3s;
-
 }
 
-.headerContent a:hover svg {
+.headerContent a:hover svg, .headerContent a:hover {
   color: #DA8371;
 }
-
-.headerContent a:hover {
-  color: #DA8371;
-}
-
 
 .headerContent svg {
   position: relative;
-  color: #fffafa ;
+  color: #fffafa;
   top: 1px;
 }
 
-
 .headerContent div:first-child img {
-  margin-right: 24px;
-  width: 60px;
-  height: 60px;
+  margin-right: 1.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 50%;
 }
+
+.selectedLink,
+.selectedLink * {
+  color: #DA8371 !important;
+}
+

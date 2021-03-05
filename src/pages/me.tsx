@@ -1,9 +1,9 @@
 import { HeaderMenu } from "../components/HeaderMenu";
 
-export default function Home() {
+export default function Me() {
   return (
     <>
-    <p>home page</p>
+      <p>me page</p>
     </>
   )
 }
