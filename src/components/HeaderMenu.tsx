@@ -1,53 +1,59 @@
-import styles from '../styles/components/HeaderMenu.module.css'
-import { IoLogoInstagram, IoLogoWhatsapp, IoHomeOutline, IoCameraOutline, IoPersonOutline } from 'react-icons/io5'
-import { LinkHTMLAttributes, useEffect, useState, } from 'react'
+import {
+  IoLogoInstagram,
+  IoLogoWhatsapp,
+  IoHomeOutline,
+  IoCameraOutline,
+  IoPersonOutline
+} from 'react-icons/io5'
 import Link from 'next/link'
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
+import { Container, Content, PagesMenu, Logo } from '../styles/components/HeaderMenu'
+import { HeaderMenu as english } from '../../public/languages/english.js'
+import { HeaderMenu as portuguese } from '../../public/languages/portuguese.js'
+import { HeaderMenu as german } from '../../public/languages/german.js'
 
-export function HeaderMenu() {
+let language = english;
+
+if (process.browser) {
+  if (navigator.language.substr(0, 2) == "pt") {
+    language = portuguese;
+  } else if (navigator.language.substr(0, 2) == "de") {
+    language = german;
+  }
+}
+
+export const HeaderMenu = () => {
   const router = useRouter();
 
   return (
-    <header className={styles.headerMenu}>
-      <div className={styles.headerContent}>
-        <div>
-          <span className="effect-shine">Xenia Yasmin</span>
-        </div>
-        <div>
+    <Container>
+      <Content>
+        <Logo>
+          <span>Xenia Yasmin</span>
+        </Logo>
+        <PagesMenu>
           <Link href="/">
-            {router.pathname === '/' ? (
-              <a className={styles.selectedLink}><IoHomeOutline /> Home</a>
-            ) : (
-              <a><IoHomeOutline /> Home</a>
-            )}
+            <a className={router.pathname == '/' ? 'selectedPage' : undefined}><IoHomeOutline /> {language.home}</a>
           </Link>
 
           <Link href="/albums">
-            {router.pathname === '/albums' ? (
-              <a className={styles.selectedLink}><IoCameraOutline /> Álbuns</a>
-            ) : (
-              <a><IoCameraOutline /> Álbuns</a>
-            )}
+            <a className={router.pathname == '/albums' ? 'selectedPage' : undefined}><IoCameraOutline /> {language.albums}</a>
           </Link>
 
           <Link href="/me">
-            {router.pathname === '/me' ? (
-              <a className={styles.selectedLink}><IoPersonOutline /> Sobre mim</a>
-            ) : (
-              <a><IoPersonOutline /> Sobre mim</a>
-            )}
+            <a className={router.pathname == '/me' ? 'selectedPage' : undefined}><IoPersonOutline /> {language.about_me}</a>
           </Link>
 
           <Link href="https://api.whatsapp.com/send?phone=491603220803&text=Olá Xenia">
-            <a target="_blank"><IoLogoWhatsapp /> Contato</a>
+            <a target="_blank"><IoLogoWhatsapp /> {language.contact}</a>
           </Link>
 
           <Link href="https://www.instagram.com/_xeniayasmin/">
-            <a target="_blank"><IoLogoInstagram /> Instagram</a>
+            <a target="_blank"><IoLogoInstagram /> {language.instagram}</a>
           </Link>
 
-        </div>
-      </div>
-    </header >
+        </PagesMenu>
+      </Content>
+    </Container >
   )
 }

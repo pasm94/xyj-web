@@ -61,6 +61,8 @@ body {
   background: #282828;
   color: #fff;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  min-width: 65rem;
 }
 
 body,
