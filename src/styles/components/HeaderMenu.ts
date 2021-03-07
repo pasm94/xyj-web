@@ -3,7 +3,10 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.header`
   width: 100%;
-  padding: 1rem 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
   background: #313235;
 `;
 
