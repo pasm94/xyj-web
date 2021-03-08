@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 import { ServerStyleSheet } from 'styled-components'
 export default class MyDocument extends Document {
-  /* isso foi colocado pq styled components dava erro */
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
@@ -12,13 +11,13 @@ export default class MyDocument extends Document {
           enhanceApp: (App) => (props) =>
             sheet.collectStyles(<App {...props} />),
         })
-        
+
 
       const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
         styles: (
-          
+
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
@@ -29,7 +28,6 @@ export default class MyDocument extends Document {
       sheet.seal()
     }
   }
-  /* ate aqui */
 
   render() {
     return (
@@ -38,10 +36,10 @@ export default class MyDocument extends Document {
           <title>Xenia Yasmin</title>
           <link rel="shortcut icon" href="camera_icon_light.svg" />
 
+          <meta charSet="utf-8" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet" />
-         
         </Head>
         <body>
           <Main />

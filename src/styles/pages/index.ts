@@ -8,13 +8,18 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  img {
+  /* img {
     object-fit: scale-down;
     background-color: #282828;
-  }
+  } */
 `;
 
 export const Photos = styled.div`
+  display: flex;
+
+  flex: 1;
+
+  width: 100%;
   padding-left: 3rem;
   display: flex;
   flex-direction: row;
@@ -28,10 +33,11 @@ export const Photos = styled.div`
   }
 
   img {
-    padding: 0 0.5rem 0.5rem;
-
-    width: 32%;
-    height: 32%;
+    margin: 0 0.5rem 0.5rem;
+    box-shadow: 0 0 15px #000;
+    border-radius: 3%;
+    width: 30%;
+    height: 30%;
 
     transition: 500ms;
 
@@ -49,9 +55,25 @@ export const Photos = styled.div`
 export const CloseButton = styled.span`
   cursor: pointer;
   font-size: 2rem;
-  position: relative;
-  margin-bottom: 39%;
-  left: 69%;
-  color: #6a6a6a;
+  position: absolute;
+  top: 90px;
+  right: 311px;
   z-index: 5;
+
+  :hover {
+    svg {
+      width: 110%;
+      height: 110%;
+    }
+  }
+
+  svg {
+    transition: color 350ms;
+    color: #6a6a6a;
+
+    :hover {
+      color: #9e9796;
+    }
+  }
 `;
+

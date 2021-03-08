@@ -7,7 +7,7 @@ import {
 } from 'react-icons/io5'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Container, Content, PagesMenu, Logo } from '../styles/components/HeaderMenu'
+import { Container, Content, PagesMenu, Logo } from '@/styles/components/HeaderMenu'
 import { HeaderMenu as english } from '../../public/languages/english.js'
 import { HeaderMenu as portuguese } from '../../public/languages/portuguese.js'
 import { HeaderMenu as german } from '../../public/languages/german.js'
