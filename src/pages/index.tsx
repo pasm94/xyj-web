@@ -1,49 +1,61 @@
-import { Container, Photos, CloseButton } from "@/styles/pages";
-import React from "react";
+import Carousel from "@/components/Carousel";
+import { Container, Photos, CloseButton, CarouselContent, Image, GoTopButton } from "@/styles/pages";
+import React, { useEffect } from "react";
 import { useCallback, useState } from "react";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { IoIosArrowDropupCircle, IoIosCloseCircle } from "react-icons/io";
 
 
 const Home = () => {
-  const [isSliderOpen, setIsSliderOpen] = useState(false);
+  const [isCarouselOpen, setIsCarouselOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const handleOpenAwesomeSlider = useCallback(() => {
-    setIsSliderOpen(true)
+  const handleOpenAwesomeSlider = useCallback((index) => {
+    setIsCarouselOpen(true)
+    setCurrentSlide(index)
   }, []);
 
   const handleCloseAwesomeSlider = useCallback(() => {
-    setIsSliderOpen(false)
+    setIsCarouselOpen(false)
   }, []);
 
-
   return (
-    <Container style={isSliderOpen ? { "width": "60%" } : { "width": "100%" }}>
-      <Photos style={isSliderOpen ? { "display": "none" } : { "display": "block" }}>
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/2.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/3.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/4.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/5.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/8.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/9.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/10.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/11.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/12.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/6.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/7.jpg" alt="" />
-        <img onClick={handleOpenAwesomeSlider} src="Photos/index/1.jpg" alt="" />
-      </Photos>
+    <>
+      <Container>
+        <CloseButton
+          visible={!isCarouselOpen}
+          onClick={handleCloseAwesomeSlider}
+        >
+          <IoIosCloseCircle />
+        </CloseButton>
 
+        <Photos isCaroselOpen={isCarouselOpen}>
+          <Image onClick={() => handleOpenAwesomeSlider(0)} src="Photos/index/2.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(1)} src="Photos/index/3.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(2)} src="Photos/index/4.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(3)} src="Photos/index/5.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(4)} src="Photos/index/8.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(5)} src="Photos/index/9.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(6)} src="Photos/index/10.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(7)} src="Photos/index/11.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(8)} src="Photos/index/12.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(9)} src="Photos/index/6.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(10)} src="Photos/index/7.jpg" alt="" />
+          <Image onClick={() => handleOpenAwesomeSlider(11)} src="Photos/index/1.jpg" alt="" />
+        </Photos>
 
-      <CloseButton
-        style={isSliderOpen ? { "display": "block" } : { "display": "none" }}
-        onClick={handleCloseAwesomeSlider}
-      >
-        <IoCloseCircleOutline />
-      </CloseButton>
+        <CarouselContent visible={isCarouselOpen}>
+          <Carousel
+            currentSlide={currentSlide}
+          />
+        </CarouselContent>
 
+        <GoTopButton visible={!isCarouselOpen}>
+          <IoIosArrowDropupCircle />
+        </GoTopButton>
 
+      </Container>
 
-    </Container>
+    </>
   )
 }
 
