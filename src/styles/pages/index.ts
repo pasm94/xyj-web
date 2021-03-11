@@ -1,5 +1,5 @@
-import { IoIosArrowDropupCircle } from "react-icons/io";
-import styled, { css } from "styled-components";
+import { IoIosArrowDropupCircle } from 'react-icons/io';
+import styled, { css } from 'styled-components';
 
 interface PhotosProps {
   isCaroselOpen: boolean;
@@ -26,31 +26,23 @@ export const Container = styled.div`
 `;
 
 export const Photos = styled.div<PhotosProps>`
-  display: flex;
-  flex: 1;
-  align-items: center;
-  width: 100%;
-
-  margin-bottom: 2rem;
-  padding-left: 3rem;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
 
   @media (max-width: 480px) {
-    flex-direction: row;
-    align-items: unset;
+    grid-template-columns: 1fr 1fr;
   }
 
-  ${(props) =>
+  ${props =>
     props.isCaroselOpen &&
     css`
-      filter: blur(3px);
+      filter: blur(10px);
     `}
 `;
 
 export const CloseButton = styled.span<CloseButtonProps>`
-  ${(props) =>
+  ${props =>
     props.visible &&
     css`
       visibility: hidden;
@@ -77,18 +69,18 @@ export const CloseButton = styled.span<CloseButtonProps>`
 `;
 
 export const Image = styled.img`
-  margin: 1rem 0rem 0rem 1rem;
+  /* margin: 1rem 0rem 0rem 1rem;*/
   box-shadow: 0 0 15px #000;
   border-radius: 3%;
-  width: 30%;
-  height: 30%;
+  width: 100%;
+  height: 100%;
 
   transition: 500ms;
 
-  @media (max-width: 480px) {
+  /* @media (max-width: 480px) {
     width: 47%;
     height: 47%;
-  }
+  } */
 
   :hover {
     transform: scale(0.9, 0.9);
@@ -100,13 +92,16 @@ export const CarouselContent = styled.div<CarouselContentProps>`
   text-align: center;
   transition: 500ms ease-out;
   transition: transform 500ms ease;
-
   top: 6rem;
   visibility: hidden;
   width: 100%;
 
+  @media (max-width: 480px) {
+    top: 40%;
+  }
+
   transform: translateX(-100%);
-  ${(props) =>
+  ${props =>
     props.visible &&
     css`
       transform: translateX(0);
@@ -115,7 +110,7 @@ export const CarouselContent = styled.div<CarouselContentProps>`
 `;
 
 export const GoTopButton = styled.div<GoTopButtonProps>`
-  ${(props) =>
+  ${props =>
     !props.visible &&
     css`
       visibility: hidden;

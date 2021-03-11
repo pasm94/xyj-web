@@ -20,3 +20,4 @@
 - [ ] Select the home page pictures;
 - [ ] Fix de carousel for a mobile acess;
 - [ ] Fix de goToTop button, set visible only with page scroll Y;
+- [x] Change images layout to CSS Grid;

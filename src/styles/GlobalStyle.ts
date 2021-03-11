@@ -62,8 +62,7 @@ export default createGlobalStyle`
   }
 `;
 
-  
-  /* :root {
+/* :root {
     --white: #fff;
     --background: #312E38;
     --gray-line: #dcdde0;
@@ -76,8 +75,8 @@ export default createGlobalStyle`
     --blue-dark: #4953b8;
     --blue-twitter: #2aa9e0;
   } */
-  
-  /* 
+
+/* 
   XENIA DEF
   Cor base: #282828
   Discreta: #424449 

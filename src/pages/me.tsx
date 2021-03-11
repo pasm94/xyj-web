@@ -3,5 +3,5 @@ export default function Me() {
     <>
       <p>me page</p>
     </>
-  )
+  );
 }

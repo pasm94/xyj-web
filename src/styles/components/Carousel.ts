@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 70rem;
@@ -24,7 +24,7 @@ export const Content = styled.div`
 export const ButtonBackContainer = styled.div`
   color: #fffafa;
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 3%;
   z-index: 5;
 
@@ -44,7 +44,7 @@ export const ButtonBackContainer = styled.div`
 export const ButtonNextContainer = styled.div`
   color: #fffafa;
   position: fixed;
-  top: 50%;
+  top: 40%;
   right: 3%;
   z-index: 5;
 
