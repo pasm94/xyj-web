@@ -32,6 +32,7 @@ export const Photos = styled.div<PhotosProps>`
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr 1fr;
+    margin-top: 21rem;
   }
 
   ${props =>
@@ -53,8 +54,8 @@ export const CloseButton = styled.span<CloseButtonProps>`
   color: #fffafa;
 
   position: fixed;
-  top: 13%;
-  right: 3%;
+  top: 15%;
+  right: 5.5%;
   z-index: 5;
 
   svg {
@@ -65,6 +66,11 @@ export const CloseButton = styled.span<CloseButtonProps>`
     svg {
       color: #da8371;
     }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 8rem;
+    top: 22%;
   }
 `;
 
@@ -77,11 +83,6 @@ export const Image = styled.img`
 
   transition: 500ms;
 
-  /* @media (max-width: 480px) {
-    width: 47%;
-    height: 47%;
-  } */
-
   :hover {
     transform: scale(0.9, 0.9);
   }
@@ -92,12 +93,12 @@ export const CarouselContent = styled.div<CarouselContentProps>`
   text-align: center;
   transition: 500ms ease-out;
   transition: transform 500ms ease;
-  top: 6rem;
+  top: 7rem;
   visibility: hidden;
   width: 100%;
 
   @media (max-width: 480px) {
-    top: 40%;
+    top: 32%;
   }
 
   transform: translateX(-100%);

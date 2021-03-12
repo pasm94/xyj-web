@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Slide } from 'pure-react-carousel';
 
 export const Container = styled.div`
   max-width: 70rem;
@@ -21,6 +22,12 @@ export const Content = styled.div`
   }
 `;
 
+export const PictureSlide = styled(Slide)`
+  @media (max-width: 480px) {
+    height: 50rem;
+  }
+`;
+
 export const ButtonBackContainer = styled.div`
   color: #fffafa;
   position: fixed;
@@ -37,6 +44,10 @@ export const ButtonBackContainer = styled.div`
     transition: 400ms;
     :hover {
       color: #da8371;
+    }
+
+    @media (max-width: 480px) {
+      display: none;
     }
   }
 `;
@@ -57,6 +68,10 @@ export const ButtonNextContainer = styled.div`
     transition: 400ms;
     :hover {
       color: #da8371;
+    }
+
+    @media (max-width: 480px) {
+      display: none;
     }
   }
 `;
