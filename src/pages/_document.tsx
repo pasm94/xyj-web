@@ -4,8 +4,8 @@ import Document, {
   Main,
   NextScript,
   DocumentContext,
-} from "next/document";
-import { ServerStyleSheet } from "styled-components";
+} from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -14,8 +14,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -37,19 +36,19 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>Xenia Yasmin</title>
-          <link rel="shortcut icon" href="camera_icon_light.svg" />
+          <link rel='shortcut icon' href='camera_icon_light.svg' />
 
-          <meta charSet="utf-8" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <meta charSet='utf-8' />
+          <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
-            href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
-            rel="stylesheet"
+            href='https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'
+            rel='stylesheet'
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap"
-            rel="stylesheet"
+            href='https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap'
+            rel='stylesheet'
           />
+          <meta name='google' content='notranslate'></meta>
         </Head>
         <body>
           <Main />

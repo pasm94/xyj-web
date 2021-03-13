@@ -1,4 +1,3 @@
-import { IoIosArrowDropupCircle } from 'react-icons/io';
 import styled, { css } from 'styled-components';
 
 interface PhotosProps {
@@ -29,10 +28,16 @@ export const Photos = styled.div<PhotosProps>`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
+  padding-bottom: 2rem;
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr 1fr;
     margin-top: 21rem;
+    grid-gap: 2rem;
+    margin: 19rem 1rem 0 1rem;
+    #ajustImg {
+      grid-area: 5 / 1 / span 2 / span 2;
+    }
   }
 
   ${props =>

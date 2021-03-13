@@ -24,6 +24,7 @@ export const Content = styled.div`
   padding-right: 1%;
   flex-direction: row;
   align-items: center;
+
   @media (max-width: 480px) {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -31,10 +32,6 @@ export const Content = styled.div`
 `;
 
 export const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   span {
     font-size: 2rem;
     color: #fffafa;
@@ -44,6 +41,7 @@ export const Logo = styled.div`
 
     @media (max-width: 480px) {
       font-size: 5rem;
+      margin-left: 16rem;
     }
   }
 
@@ -56,7 +54,8 @@ export const Logo = styled.div`
 `;
 
 export const PagesMenu = styled.div`
-  margin-left: auto;
+  margin-left: 11rem;
+  /* justify-content: center; */
   @media (max-width: 480px) {
     margin-left: 0;
   }
@@ -72,13 +71,28 @@ export const PagesMenu = styled.div`
     transition: color 0.3s;
 
     @media (max-width: 480px) {
-      font-size: 1.7rem;
+      font-size: 2.5rem;
     }
 
     svg {
       position: relative;
       color: #fffafa;
       top: 1px;
+    }
+
+    img {
+      left: 12rem;
+      width: 2rem;
+      position: relative;
+      top: 5px;
+    }
+
+    @media (max-width: 480px) {
+      img {
+        width: 3rem;
+        position: relative;
+        left: 2rem;
+      }
     }
 
     &:hover {

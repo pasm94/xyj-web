@@ -1,6 +1,4 @@
 import {
-  IoLogoInstagram,
-  IoLogoWhatsapp,
   IoHomeOutline,
   IoCameraOutline,
   IoPersonOutline,
@@ -61,15 +59,15 @@ export const HeaderMenu = () => {
             </a>
           </Link>
 
-          <Link href='https://api.whatsapp.com/send?phone=491603220803&text=Olá Xenia'>
+          <Link href='https://api.whatsapp.com/send?phone=491603220803&text=Olá Xenia, gostei muito das suas fotos...'>
             <a target='_blank'>
-              <IoLogoWhatsapp /> {language.contact}
+              <img src='whatsapp.png' alt='' />
             </a>
           </Link>
 
           <Link href='https://www.instagram.com/_xeniayasmin/'>
             <a target='_blank'>
-              <IoLogoInstagram /> {language.instagram}
+              <img src='instagram.png' alt='' />
             </a>
           </Link>
         </PagesMenu>

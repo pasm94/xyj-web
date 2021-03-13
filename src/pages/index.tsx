@@ -7,7 +7,8 @@ import {
   Image,
   GoTopButton,
 } from '@/styles/pages';
-import React, { useEffect } from 'react';
+import Head from 'next/head';
+import React from 'react';
 import { useCallback, useState } from 'react';
 import { IoIosArrowDropupCircle, IoIosCloseCircle } from 'react-icons/io';
 
@@ -26,6 +27,9 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Xenia Yasmin | Home</title>
+      </Head>
       <Container>
         <CloseButton
           visible={!isCarouselOpen}
@@ -71,14 +75,15 @@ const Home = () => {
             alt=''
           />
           <Image
-            onClick={() => handleOpenAwesomeSlider(7)}
-            src='Photos/index/11.jpg'
-            alt=''
-          />
-          <Image
             onClick={() => handleOpenAwesomeSlider(8)}
             src='Photos/index/12.jpg'
             alt=''
+          />
+          <Image
+            onClick={() => handleOpenAwesomeSlider(7)}
+            src='Photos/index/11.jpg'
+            alt=''
+            id='ajustImg'
           />
           <Image
             onClick={() => handleOpenAwesomeSlider(9)}
