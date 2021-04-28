@@ -4,7 +4,7 @@
 - [x] Implement typescript;
 - Header:
   - [x] Start;
-  - [ ] Finish;
+  - [x] Finish;
 - [x] Create all pages;
 - [x] Implement styled components;
 - [x] Verify menu selected (example in gobarber-web signin and signup inputs);
@@ -16,8 +16,10 @@
 - [x] Add pictures slider;
 - [x] Check if exists an instagram api to show a profile stories in real time (https://developers.facebook.com/docs/instagram-api/reference/ig-user/stories);
   - Register necessary right hear -> https://www.instagram.com/developer/register/
-- [ ] Put the pictures in an api;
 - [ ] Select the home page pictures;
-- [ ] Fix de carousel for a mobile acess;
-- [ ] Fix de goToTop button, set visible only with page scroll Y;
+- [x] Fix the carousel for a mobile acess;
+- [ ] Fix the goToTop button, set visible only with page scroll Y;
 - [x] Change images layout to CSS Grid;
+- [x] Lazy attribute html images;
+- [ ] Read about next-images;
+- [ ] Create a Link component;

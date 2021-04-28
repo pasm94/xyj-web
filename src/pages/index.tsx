@@ -71,44 +71,43 @@ const Home = () => {
           />
           <Image
             onClick={() => handleOpenAwesomeSlider(6)}
-            src='Photos/index/10.jpg'
-            alt=''
-          />
-          <Image
-            onClick={() => handleOpenAwesomeSlider(8)}
-            src='Photos/index/12.jpg'
-            alt=''
-          />
-          <Image
-            onClick={() => handleOpenAwesomeSlider(7)}
-            src='Photos/index/11.jpg'
-            alt=''
-            id='ajustImg'
-          />
-          <Image
-            onClick={() => handleOpenAwesomeSlider(9)}
             src='Photos/index/6.jpg'
             alt=''
           />
           <Image
-            onClick={() => handleOpenAwesomeSlider(10)}
+            onClick={() => handleOpenAwesomeSlider(7)}
             src='Photos/index/7.jpg'
             alt=''
           />
           <Image
-            onClick={() => handleOpenAwesomeSlider(11)}
+            onClick={() => handleOpenAwesomeSlider(8)}
             src='Photos/index/1.jpg'
             alt=''
           />
+          {/* <Image 
+            onClick={() => handleOpenAwesomeSlider(9)}
+            src='Photos/index/10.jpg'
+            alt=''
+          />
+          <Image 
+            onClick={() => handleOpenAwesomeSlider(10)}
+            src='Photos/index/12.jpg'
+            alt=''
+          />
+          <Image 
+            onClick={() => handleOpenAwesomeSlider(11)}
+            src='Photos/index/11.jpg'
+            alt=''
+          /> */}
         </Photos>
 
         <CarouselContent visible={isCarouselOpen}>
           <Carousel currentSlide={currentSlide} />
         </CarouselContent>
 
-        <GoTopButton visible={!isCarouselOpen}>
+        {/* <GoTopButton visible={!isCarouselOpen}>
           <IoIosArrowDropupCircle />
-        </GoTopButton>
+        </GoTopButton> */}
       </Container>
     </>
   );

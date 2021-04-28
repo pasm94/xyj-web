@@ -5,9 +5,11 @@ export const Container = styled.header`
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 1rem;
   background: #313235;
   margin-bottom: 1rem;
+
   @media (max-width: 480px) {
     position: fixed;
     z-index: 10;
@@ -16,14 +18,11 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
-  width: 80%;
   min-width: 60rem;
-  margin: 0 auto;
   display: flex;
-  padding-left: 1%;
-  padding-right: 1%;
-  flex-direction: row;
   align-items: center;
+  /* justify-content: center; */
+  justify-content: space-between;
 
   @media (max-width: 480px) {
     display: grid;
@@ -54,44 +53,47 @@ export const Logo = styled.div`
 `;
 
 export const PagesMenu = styled.div`
-  margin-left: 11rem;
-  /* justify-content: center; */
+  display: flex;
   @media (max-width: 480px) {
     margin-left: 0;
   }
 
   a {
-    & + a {
-      padding-left: 2.5rem;
+    :first-child {
+      margin-left: 10rem;
     }
 
+    @media (max-width: 480px) {
+      :first-child {
+        margin: 0;
+      }
+    }
+    & + a {
+      padding-left: 2rem;
+    }
+
+    /* flex: 1; */
+    align-items: center;
     font-size: 1rem;
     color: #fffafa;
     align-items: center;
     transition: color 0.3s;
 
-    @media (max-width: 480px) {
-      font-size: 2.5rem;
-    }
-
     svg {
-      position: relative;
+      margin: 0;
       color: #fffafa;
-      top: 1px;
-    }
-
-    img {
-      left: 12rem;
-      width: 2rem;
+      font-size: 1.5rem;
       position: relative;
-      top: 5px;
+      top: 3px;
     }
 
     @media (max-width: 480px) {
-      img {
-        width: 3rem;
-        position: relative;
-        left: 2rem;
+      font-size: 2rem;
+      :nth-child(4) {
+        margin-left: 10rem;
+      }
+      svg {
+        font-size: 3rem;
       }
     }
 

@@ -30,7 +30,7 @@ const Carousel = ({ currentSlide }: CarouselProps) => {
           infinite={true}
           naturalSlideWidth={25}
           naturalSlideHeight={11}
-          totalSlides={12}
+          totalSlides={9}
           currentSlide={currentSlide}
         >
           <Slider>
@@ -46,28 +46,28 @@ const Carousel = ({ currentSlide }: CarouselProps) => {
             <PictureSlide index={3}>
               <img src='Photos/index/5.jpg' alt='' />
             </PictureSlide>
-            <PictureSlide index={4}>
+            <PictureSlide index={1}>
               <img src='Photos/index/8.jpg' alt='' />
             </PictureSlide>
             <PictureSlide index={5}>
               <img src='Photos/index/9.jpg' alt='' />
             </PictureSlide>
-            <PictureSlide index={6}>
+            {/* <PictureSlide index={9}>
               <img src='Photos/index/10.jpg' alt='' />
             </PictureSlide>
-            <PictureSlide index={7}>
+            <PictureSlide index={11}>
               <img src='Photos/index/11.jpg' alt='' />
             </PictureSlide>
-            <PictureSlide index={8}>
-              <img src='Photos/index/12.jpg' alt='' />
-            </PictureSlide>
-            <PictureSlide index={9}>
+            <PictureSlide index={10}>
+              <img src='Photos/index/12.jpg' alt='' /> */}
+            {/* </PictureSlide> */}
+            <PictureSlide index={6}>
               <img src='Photos/index/6.jpg' alt='' />
             </PictureSlide>
-            <PictureSlide index={10}>
+            <PictureSlide index={7}>
               <img src='Photos/index/7.jpg' alt='' />
             </PictureSlide>
-            <PictureSlide index={11}>
+            <PictureSlide index={8}>
               <img src='Photos/index/1.jpg' alt='' />
             </PictureSlide>
           </Slider>

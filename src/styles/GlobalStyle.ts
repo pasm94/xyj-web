@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   * {
@@ -26,8 +26,7 @@ export default createGlobalStyle`
     background: #282828;
     color: #fff;
     -webkit-font-smoothing: antialiased;
-    width: 100%;
-    min-width: 65rem;
+    /* width: 100%; */
     min-width: 65rem;
     overflow-y: scroll;
   }
