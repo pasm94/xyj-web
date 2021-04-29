@@ -8,8 +8,6 @@ export default function Album() {
     test = 'Hades';
   } else if (router.asPath.includes('nature')) {
     test = 'Nature';
-  } else if (router.asPath.includes('people')) {
-    test = 'People';
   } else if (router.asPath.includes('places')) {
     test = 'Places';
   }

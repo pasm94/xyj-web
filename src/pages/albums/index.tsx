@@ -1,23 +1,40 @@
+import {
+  Container,
+  Album,
+  AlbumTitle,
+  AlbumImage,
+} from '@/styles/pages/albums';
 import Link from 'next/link';
 
 export default function Albums() {
   return (
-    <>
+    <Container>
       <Link href='/albums/hades'>
-        <a>Hades</a>
+        <a>
+          <Album id='firstAlbum'>
+            <AlbumTitle>Hades</AlbumTitle>
+            <AlbumImage src='Albums/index/hades.jpg' />
+          </Album>
+        </a>
       </Link>
-      <br />
+
       <Link href='/albums/nature'>
-        <a>Nature</a>
+        <a>
+          <Album>
+            <AlbumTitle>Nature</AlbumTitle>
+            <AlbumImage src='Albums/index/nature.jpg' />
+          </Album>
+        </a>
       </Link>
-      <br />
-      <Link href='/albums/people'>
-        <a>People</a>
-      </Link>
-      <br />
+
       <Link href='/albums/places'>
-        <a>Places</a>
+        <a>
+          <Album>
+            <AlbumTitle>Places</AlbumTitle>
+            <AlbumImage src='Albums/index/places.jpg' />
+          </Album>
+        </a>
       </Link>
-    </>
+    </Container>
   );
 }

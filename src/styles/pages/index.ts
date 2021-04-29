@@ -38,9 +38,6 @@ export const Photos = styled.div<PhotosProps>`
   @media (max-width: 480px) {
     margin-top: 21rem;
     margin: 19rem 1rem 0 1rem;
-    #ajustImg {
-      grid-area: 5 / 1 / span 2 / span 2;
-    }
   }
 
   ${props =>

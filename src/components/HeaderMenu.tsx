@@ -46,7 +46,7 @@ export const HeaderMenu = () => {
           <Link href='/albums'>
             <a
               className={
-                router.pathname == '/albums' ? 'selectedPage' : undefined
+                router.pathname.includes('/albums') ? 'selectedPage' : undefined
               }
             >
               <IoCameraOutline /> {language.albums}
