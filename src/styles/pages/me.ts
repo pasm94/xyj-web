@@ -36,6 +36,6 @@ export const ProfileText = styled.span`
   margin-left: 2rem;
 
   @media (max-width: 480px) {
-    font-size: 26px;
+    font-size: 36px;
   }
 `;

@@ -1,35 +1,34 @@
 import { useRouter } from 'next/router';
+import { Container, Image, Photos, Title } from '@/styles/pages/albums/slug';
 
 export default function Album() {
   const router = useRouter();
 
-  let test = '';
+  let album = '';
   if (router.asPath.includes('hades')) {
-    test = 'Hades';
+    album = 'Hades';
   } else if (router.asPath.includes('nature')) {
-    test = 'Nature';
+    album = 'Nature';
   } else if (router.asPath.includes('places')) {
-    test = 'Places';
+    album = 'Places';
   }
 
   return (
-    <>
-      <p>{test}</p>
-      <p>{router.asPath}</p>
-    </>
+    <Container>
+      <Title>
+        <span>{album}</span>
+      </Title>
+      <Photos>
+        <Image src={`/Albums/${album}/1.jpg`}></Image>
+        <Image src={`/Albums/${album}/2.jpg`}></Image>
+        <Image src={`/Albums/${album}/3.jpg`}></Image>
+        <Image src={`/Albums/${album}/4.jpg`}></Image>
+        <Image src={`/Albums/${album}/5.jpg`}></Image>
+        <Image src={`/Albums/${album}/6.jpg`}></Image>
+        <Image src={`/Albums/${album}/7.jpg`}></Image>
+        <Image src={`/Albums/${album}/8.jpg`}></Image>
+        <Image src={`/Albums/${album}/9.jpg`}></Image>
+      </Photos>
+    </Container>
   );
 }
-
-/* <Link href='/albums/hades'>
-        <a>Hades</a>
-      </Link>
-
-      <Link href='/albums/nature'>
-        <a>Nature</a>
-      </Link>
-
-      <Link href='/albums/people'>
-        <a>People</a>
-      </Link>
-
-      <Link href='/albums/places'> */

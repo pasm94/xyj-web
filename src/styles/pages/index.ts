@@ -1,21 +1,5 @@
 import styled, { css } from 'styled-components';
 
-interface PhotosProps {
-  isCaroselOpen: boolean;
-}
-
-interface CarouselContentProps {
-  visible: boolean;
-}
-
-interface CloseButtonProps {
-  visible: boolean;
-}
-
-interface GoTopButtonProps {
-  visible: boolean;
-}
-
 export const Container = styled.div`
   max-width: 70rem;
   width: 70rem;
@@ -25,7 +9,7 @@ export const Container = styled.div`
   /* justify-content: center; */
 `;
 
-export const Photos = styled.div<PhotosProps>`
+export const Photos = styled.div`
   display: flex;
   /* grid-template-columns: 1fr 1fr 1fr; */
   /* grid-gap: 1rem; */
@@ -39,21 +23,9 @@ export const Photos = styled.div<PhotosProps>`
     margin-top: 21rem;
     margin: 19rem 1rem 0 1rem;
   }
-
-  ${props =>
-    props.isCaroselOpen &&
-    css`
-      filter: blur(10px);
-    `}
 `;
 
-export const CloseButton = styled.span<CloseButtonProps>`
-  ${props =>
-    props.visible &&
-    css`
-      visibility: hidden;
-    `}
-
+export const CloseButton = styled.span`
   cursor: pointer;
   font-size: 3rem;
   color: #fffafa;
@@ -91,7 +63,7 @@ export const Image = styled.img`
   transition: 500ms;
 
   :hover {
-    transform: scale(0.9, 0.9);
+    transform: scale(1.1, 1.1);
   }
 
   @media (max-width: 480px) {
@@ -99,7 +71,7 @@ export const Image = styled.img`
   }
 `;
 
-export const CarouselContent = styled.div<CarouselContentProps>`
+export const CarouselContent = styled.div`
   position: fixed;
   text-align: center;
   transition: 500ms ease-out;
@@ -113,21 +85,9 @@ export const CarouselContent = styled.div<CarouselContentProps>`
   }
 
   transform: translateX(-100%);
-  ${props =>
-    props.visible &&
-    css`
-      transform: translateX(0);
-      visibility: visible;
-    `}
 `;
 
-export const GoTopButton = styled.div<GoTopButtonProps>`
-  ${props =>
-    !props.visible &&
-    css`
-      visibility: hidden;
-    `}
-
+export const GoTopButton = styled.div`
   cursor: pointer;
   font-size: 3rem;
   color: #fffafa;
