@@ -23,3 +23,4 @@
 - [x] Lazy attribute html images;
 - [ ] Read about next-images;
 - [ ] Create a Link component;
+- [ ] Make a menu bars for mobile;
