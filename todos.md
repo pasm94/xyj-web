@@ -23,4 +23,5 @@
 - [x] Lazy attribute html images;
 - [ ] Read about next-images;
 - [ ] Create a Link component;
-- [ ] Make a menu bars for mobile;
+- [ ] Close the menu bars when the width change;
+- [ ] Reponsive for 720px;
