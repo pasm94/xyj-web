@@ -61,7 +61,7 @@ export const HeaderMenu = () => {
             </a>
           </Link>
 
-          <Link href='https://api.whatsapp.com/send?phone=491603220803&text=Olá Xenia, gostei muito das suas fotos...'>
+          <Link href='https://api.whatsapp.com/send?phone=491603220803'>
             <a target='_blank'>
               <IoLogoWhatsapp />
             </a>

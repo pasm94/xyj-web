@@ -7,7 +7,6 @@ export default createGlobalStyle`
     box-sizing: border-box;
     outline: 0;
   }
-
   
   @media (max-width: 1080px) {
     html {
@@ -27,7 +26,7 @@ export default createGlobalStyle`
     color: #fff;
     -webkit-font-smoothing: antialiased;
     /* width: 100%; */
-    min-width: 65rem;
+    min-width: 70rem;
     overflow-y: scroll;
   }
   

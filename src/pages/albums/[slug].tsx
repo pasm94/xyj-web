@@ -1,8 +1,20 @@
 import { useRouter } from 'next/router';
-import { Container, Image, Photos, Title } from '@/styles/pages/albums/slug';
+import {
+  Container,
+  Image,
+  Photos,
+  Title,
+  SwiperContainer,
+} from '@/styles/pages/albums/slug';
+import { SwiperCarousel } from '@/components/SwiperCarousel';
+import { useState } from 'react';
+import { CloseButton } from '@/styles/pages';
+import { FiXCircle } from 'react-icons/fi';
 
 export default function Album() {
   const router = useRouter();
+  const [isSwiperCarouselOpen, setIsSwiperCarouselOpen] = useState(false);
+  const [initialSlide, setInitialSlide] = useState(0);
 
   let album = '';
   if (router.asPath.includes('hades')) {
@@ -13,22 +25,54 @@ export default function Album() {
     album = 'Places';
   }
 
+  const imgs = [
+    `/Albums/${album}/0.jpg`,
+    `/Albums/${album}/1.jpg`,
+    `/Albums/${album}/2.jpg`,
+    `/Albums/${album}/3.jpg`,
+    `/Albums/${album}/4.jpg`,
+    `/Albums/${album}/5.jpg`,
+    `/Albums/${album}/6.jpg`,
+    `/Albums/${album}/7.jpg`,
+    `/Albums/${album}/8.jpg`,
+  ];
+
+  const regexFindNumber = /\d+/g;
+
+  function openCarousel(imgPosition: number) {
+    setInitialSlide(imgPosition);
+    setIsSwiperCarouselOpen(true);
+  }
+
   return (
     <Container>
       <Title>
         <span>{album}</span>
       </Title>
-      <Photos>
-        <Image src={`/Albums/${album}/1.jpg`}></Image>
-        <Image src={`/Albums/${album}/2.jpg`}></Image>
-        <Image src={`/Albums/${album}/3.jpg`}></Image>
-        <Image src={`/Albums/${album}/4.jpg`}></Image>
-        <Image src={`/Albums/${album}/5.jpg`}></Image>
-        <Image src={`/Albums/${album}/6.jpg`}></Image>
-        <Image src={`/Albums/${album}/7.jpg`}></Image>
-        <Image src={`/Albums/${album}/8.jpg`}></Image>
-        <Image src={`/Albums/${album}/9.jpg`}></Image>
+      <Photos style={{ filter: isSwiperCarouselOpen && 'blur(5px)' }}>
+        {imgs.map(img => (
+          <Image
+            onClick={() => openCarousel(Number(img.match(regexFindNumber)))}
+            key={img}
+            src={img}
+          />
+        ))}
       </Photos>
+
+      <SwiperContainer>
+        {isSwiperCarouselOpen && (
+          <>
+            <section>
+              <FiXCircle
+                onClick={() => {
+                  setIsSwiperCarouselOpen(false);
+                }}
+              />
+            </section>
+            <SwiperCarousel imagesSrc={imgs} initialSlide={initialSlide} />
+          </>
+        )}
+      </SwiperContainer>
     </Container>
   );
 }

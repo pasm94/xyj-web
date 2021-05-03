@@ -13,5 +13,13 @@ export const Container = styled.div`
 
 export const Photo = styled.img`
   /* width: 60%; */
-  height: 31rem;
+  height: 80vh;
+
+  @media (max-width: 740px) {
+    height: 110vh;
+  }
+
+  @media (max-width: 480px) {
+    height: 70vh;
+  }
 `;

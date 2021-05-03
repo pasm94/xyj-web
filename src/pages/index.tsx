@@ -11,6 +11,18 @@ import React from 'react';
 import { useCallback, useState } from 'react';
 
 const Home = () => {
+  const imgs = [
+    `Photos/index/0.jpg`,
+    `Photos/index/1.jpg`,
+    `Photos/index/2.jpg`,
+    `Photos/index/3.jpg`,
+    `Photos/index/4.jpg`,
+    `Photos/index/5.jpg`,
+    `Photos/index/6.jpg`,
+    `Photos/index/7.jpg`,
+    `Photos/index/8.jpg`,
+  ];
+
   return (
     <>
       <Head>
@@ -18,30 +30,9 @@ const Home = () => {
       </Head>
       <Container>
         <Photos>
-          <Image src='Photos/index/2.jpg' alt='' />
-          <Image src='Photos/index/3.jpg' alt='' />
-          <Image src='Photos/index/4.jpg' alt='' />
-          <Image src='Photos/index/5.jpg' alt='' />
-          <Image src='Photos/index/8.jpg' alt='' />
-          <Image src='Photos/index/9.jpg' alt='' />
-          <Image src='Photos/index/6.jpg' alt='' />
-          <Image src='Photos/index/7.jpg' alt='' />
-          <Image src='Photos/index/1.jpg' alt='' />
-          {/* <Image 
-            
-            src='Photos/index/10.jpg'
-            alt=''
-          />
-          <Image 
-            
-            src='Photos/index/12.jpg'
-            alt=''
-          />
-          <Image 
-            
-            src='Photos/index/11.jpg'
-            alt=''
-          /> */}
+          {imgs.map(img => (
+            <Image src={img} />
+          ))}
         </Photos>
       </Container>
     </>

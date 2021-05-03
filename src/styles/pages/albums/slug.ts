@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   max-width: 70rem;
@@ -33,6 +33,11 @@ export const Photos = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media (max-width: 480px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 `;
 
 export const Image = styled.img`
@@ -49,6 +54,32 @@ export const Image = styled.img`
   }
 
   @media (max-width: 480px) {
-    max-width: 34rem;
+    max-width: 32rem;
+  }
+`;
+
+export const SwiperContainer = styled.div`
+  position: fixed;
+
+  @media (max-width: 480px) {
+    margin-top: 19rem;
+  }
+
+  svg {
+    right: 1rem;
+    position: absolute;
+    font-size: 3rem;
+    z-index: 10;
+
+    @media (max-width: 480px) {
+      font-size: 5rem;
+    }
+
+    transition: 300ms;
+    :hover {
+      color: #da8371;
+      font-size: 3.2rem;
+      cursor: pointer;
+    }
   }
 `;
