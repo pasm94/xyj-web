@@ -8,7 +8,6 @@ import {
 } from '@/styles/pages/albums/slug';
 import { SwiperCarousel } from '@/components/SwiperCarousel';
 import { useState } from 'react';
-import { CloseButton } from '@/styles/pages';
 import { FiXCircle } from 'react-icons/fi';
 
 export default function Album() {

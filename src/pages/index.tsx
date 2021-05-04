@@ -1,14 +1,6 @@
-import {
-  Container,
-  Photos,
-  CloseButton,
-  CarouselContent,
-  Image,
-  GoTopButton,
-} from '@/styles/pages';
+import { Container, Photos, Image } from '@/styles/pages';
 import Head from 'next/head';
 import React from 'react';
-import { useCallback, useState } from 'react';
 
 const Home = () => {
   const imgs = [
@@ -31,7 +23,7 @@ const Home = () => {
       <Container>
         <Photos>
           {imgs.map(img => (
-            <Image src={img} />
+            <Image key={img} src={img} />
           ))}
         </Photos>
       </Container>
