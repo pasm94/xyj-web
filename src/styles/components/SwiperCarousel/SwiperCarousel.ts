@@ -13,13 +13,38 @@ export const Container = styled.div`
 
 export const Photo = styled.img`
   /* width: 60%; */
+
   height: 80vh;
 
+  @media (max-width: 1080px) {
+    height: 50vh;
+  }
+
   @media (max-width: 740px) {
-    height: 110vh;
+    height: 75vh;
   }
 
   @media (max-width: 480px) {
     height: 70vh;
+  }
+
+  @media (max-width: 370px) {
+    height: 80vh;
+  }
+
+  @media (orientation: landscape) {
+    height: 70vh;
+
+    @media (max-width: 1080px) {
+      height: 90vh;
+    }
+
+    @media (max-width: 740px) {
+      height: 120vh;
+    }
+
+    @media (max-width: 480px) {
+      height: 100vh;
+    }
   }
 `;

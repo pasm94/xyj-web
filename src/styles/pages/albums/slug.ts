@@ -32,7 +32,7 @@ export const Photos = styled.div`
   padding-bottom: 2rem;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 
   @media (max-width: 480px) {
     margin-left: 2rem;

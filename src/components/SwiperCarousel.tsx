@@ -18,11 +18,7 @@ export function SwiperCarousel({
 }: SwiperCarouselProps) {
   return (
     <Container>
-      <Swiper
-        initialSlide={initialSlide}
-        navigation
-        pagination={{ clickable: true }}
-      >
+      <Swiper initialSlide={initialSlide} navigation>
         {imagesSrc.map(img => (
           <SwiperSlide key={img}>
             <Photo src={img} />

@@ -9,14 +9,14 @@ import Link from 'next/link';
 export default function Albums() {
   return (
     <Container>
-      <Link href='/albums/hades'>
+      {/* <Link href='/albums/hades'>
         <a>
           <Album id='firstAlbum'>
             <AlbumTitle>Hades</AlbumTitle>
             <AlbumImage src='Albums/index/hades.jpg' />
           </Album>
         </a>
-      </Link>
+      </Link> */}
 
       <Link href='/albums/nature'>
         <a>
@@ -32,6 +32,15 @@ export default function Albums() {
           <Album>
             <AlbumTitle>Places</AlbumTitle>
             <AlbumImage src='Albums/index/places.jpg' />
+          </Album>
+        </a>
+      </Link>
+
+      <Link href='/albums/art'>
+        <a>
+          <Album>
+            <AlbumTitle>Art</AlbumTitle>
+            <AlbumImage src='Albums/index/art.jpg' />
           </Album>
         </a>
       </Link>
