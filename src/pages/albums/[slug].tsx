@@ -9,6 +9,7 @@ import {
 import { SwiperCarousel } from '@/components/SwiperCarousel';
 import { useState } from 'react';
 import { FiXCircle } from 'react-icons/fi';
+import Head from 'next/head';
 
 export default function Album() {
   const router = useRouter();
@@ -27,38 +28,38 @@ export default function Album() {
       `/Albums/${album}/1.jpg`,
       `/Albums/${album}/2.jpg`,
       `/Albums/${album}/3.jpg`,
-      `/Albums/${album}/4.JPG`,
-      `/Albums/${album}/5.JPG`,
-      `/Albums/${album}/6.JPG`,
-      `/Albums/${album}/7.JPG`,
-      `/Albums/${album}/8.JPG`,
+      `/Albums/${album}/4.jpg`,
+      `/Albums/${album}/5.jpg`,
+      `/Albums/${album}/6.jpg`,
+      `/Albums/${album}/7.jpg`,
+      `/Albums/${album}/8.jpg`,
       `/Albums/${album}/9.jpg`,
-      `/Albums/${album}/10.JPG`,
-      `/Albums/${album}/11.JPG`,
-      `/Albums/${album}/12.JPG`,
-      `/Albums/${album}/13.JPG`,
-      `/Albums/${album}/14.JPG`,
-      `/Albums/${album}/15.JPG`,
-      `/Albums/${album}/16.JPG`,
-      `/Albums/${album}/17.JPG`,
-      `/Albums/${album}/18.JPG`,
-      `/Albums/${album}/19.JPG`,
-      `/Albums/${album}/20.JPG`,
+      `/Albums/${album}/10.jpg`,
+      `/Albums/${album}/11.jpg`,
+      `/Albums/${album}/12.jpg`,
+      `/Albums/${album}/13.jpg`,
+      `/Albums/${album}/14.jpg`,
+      `/Albums/${album}/15.jpg`,
+      `/Albums/${album}/16.jpg`,
+      `/Albums/${album}/17.jpg`,
+      `/Albums/${album}/18.jpg`,
+      `/Albums/${album}/19.jpg`,
+      `/Albums/${album}/20.jpg`,
       `/Albums/${album}/21.jpg`,
-      `/Albums/${album}/22.JPG`,
-      `/Albums/${album}/23.JPG`,
-      `/Albums/${album}/24.JPG`,
-      `/Albums/${album}/25.JPG`,
-      `/Albums/${album}/26.JPG`,
-      `/Albums/${album}/27.JPG`,
-      `/Albums/${album}/28.JPG`,
-      `/Albums/${album}/29.JPG`,
-      `/Albums/${album}/30.JPG`,
-      `/Albums/${album}/31.JPG`,
-      `/Albums/${album}/32.JPG`,
-      `/Albums/${album}/33.JPG`,
+      `/Albums/${album}/22.jpg`,
+      `/Albums/${album}/23.jpg`,
+      `/Albums/${album}/24.jpg`,
+      `/Albums/${album}/25.jpg`,
+      `/Albums/${album}/26.jpg`,
+      `/Albums/${album}/27.jpg`,
+      `/Albums/${album}/28.jpg`,
+      `/Albums/${album}/29.jpg`,
+      `/Albums/${album}/30.jpg`,
+      `/Albums/${album}/31.jpg`,
+      `/Albums/${album}/32.jpg`,
+      `/Albums/${album}/33.jpg`,
       `/Albums/${album}/34.jpg`,
-      `/Albums/${album}/35.JPG`,
+      `/Albums/${album}/35.jpg`,
       `/Albums/${album}/36.jpg`,
       `/Albums/${album}/37.jpg`,
       `/Albums/${album}/38.jpg`,
@@ -67,10 +68,10 @@ export default function Album() {
   } else if (router.asPath.includes('places')) {
     album = 'Places';
     imgs = [
-      `/Albums/${album}/0.JPG`,
+      `/Albums/${album}/0.jpg`,
       `/Albums/${album}/1.jpg`,
       `/Albums/${album}/2.jpg`,
-      `/Albums/${album}/3.JPG`,
+      `/Albums/${album}/3.png`,
       `/Albums/${album}/4.jpg`,
       `/Albums/${album}/5.jpg`,
     ];
@@ -93,34 +94,39 @@ export default function Album() {
   }
 
   return (
-    <Container>
-      <Title>
-        <span>{album}</span>
-      </Title>
-      <Photos style={{ filter: isSwiperCarouselOpen && 'blur(5px)' }}>
-        {imgs.map(img => (
-          <Image
-            onClick={() => openCarousel(Number(img.match(regexFindNumber)))}
-            key={img}
-            src={img}
-          />
-        ))}
-      </Photos>
+    <>
+      <Head>
+        <title>Xenia Yasmin | {album}</title>
+      </Head>
+      <Container>
+        <Title>
+          <span>{album}</span>
+        </Title>
+        <Photos style={{ filter: isSwiperCarouselOpen && 'blur(5px)' }}>
+          {imgs.map(img => (
+            <Image
+              onClick={() => openCarousel(Number(img.match(regexFindNumber)))}
+              key={img}
+              src={img}
+            />
+          ))}
+        </Photos>
 
-      <SwiperContainer>
-        {isSwiperCarouselOpen && (
-          <>
-            <section>
-              <FiXCircle
-                onClick={() => {
-                  setIsSwiperCarouselOpen(false);
-                }}
-              />
-            </section>
-            <SwiperCarousel imagesSrc={imgs} initialSlide={initialSlide} />
-          </>
-        )}
-      </SwiperContainer>
-    </Container>
+        <SwiperContainer>
+          {isSwiperCarouselOpen && (
+            <>
+              <section>
+                <FiXCircle
+                  onClick={() => {
+                    setIsSwiperCarouselOpen(false);
+                  }}
+                />
+              </section>
+              <SwiperCarousel imagesSrc={imgs} initialSlide={initialSlide} />
+            </>
+          )}
+        </SwiperContainer>
+      </Container>
+    </>
   );
 }
