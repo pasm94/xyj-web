@@ -36,11 +36,11 @@ export const Photo = styled.img`
     height: 70vh;
 
     @media (max-width: 1080px) {
-      height: 90vh;
+      height: 100vh;
     }
 
     @media (max-width: 740px) {
-      height: 120vh;
+      height: 110vh;
     }
 
     @media (max-width: 680px) {

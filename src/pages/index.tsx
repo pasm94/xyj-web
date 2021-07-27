@@ -4,8 +4,7 @@ import React from 'react';
 
 const Home = () => {
   const imgs = [
-    `Photos/index/0.jpg`,
-    `Photos/index/1.png`,
+    `Photos/index/1.jpg`,
     `Photos/index/2.jpg`,
     `Photos/index/3.jpg`,
     `Photos/index/4.jpg`,
@@ -18,6 +17,11 @@ const Home = () => {
     `Photos/index/11.jpg`,
     `Photos/index/12.jpg`,
     `Photos/index/13.jpg`,
+    `Photos/index/14.jpg`,
+    `Photos/index/15.jpg`,
+    `Photos/index/16.jpg`,
+    `Photos/index/17.jpg`,
+    `Photos/index/18.jpg`,
   ];
 
   return (
