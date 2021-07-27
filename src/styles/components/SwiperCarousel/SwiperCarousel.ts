@@ -43,6 +43,10 @@ export const Photo = styled.img`
       height: 120vh;
     }
 
+    @media (max-width: 680px) {
+      height: 115vh;
+    }
+
     @media (max-width: 480px) {
       height: 100vh;
     }
